@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Images\close.png" />
+    <None Remove="Assets\Images\Email.png" />
+    <None Remove="Assets\Images\facebook.png" />
+    <None Remove="Assets\Images\google.png" />
+    <None Remove="Assets\Images\linkedin.png" />
+    <None Remove="Assets\Images\Lock.png" />
+    <None Remove="Assets\Images\Name.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1938.49" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="7.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\close.png" />
+    <Resource Include="Assets\Images\Email.png" />
+    <Resource Include="Assets\Images\facebook.png" />
+    <Resource Include="Assets\Images\google.png" />
+    <Resource Include="Assets\Images\linkedin.png" />
+    <Resource Include="Assets\Images\Lock.png" />
+    <Resource Include="Assets\Images\Name.png" />
+  </ItemGroup>
+
+</Project>

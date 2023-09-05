@@ -1,0 +1,182 @@
+﻿<Window x:Class="phinance2.MyAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:phinance2"
+        mc:Ignorable="d"
+        Title="MyAccount" 
+        Height="800" 
+        Width="1200"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True" 
+        WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border
+            Background="#3AADA1"
+            Grid.ColumnSpan="3"
+            Height="50"
+            MouseDown="Border_MouseDown">
+            <Grid>
+                <TextBlock
+                    Text="My Account"
+                    HorizontalAlignment="Left"
+                    Margin="15,0"
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    FontSize="22"
+                    FontWeight="Bold"/>
+
+                <!--Window Buttons-->
+                <StackPanel
+                     HorizontalAlignment="Right"
+                     Margin="10,0"
+                     Orientation="Horizontal" >
+                    <Button x:Name="btnMinimize"
+                         Content="{StaticResource minimize}"
+                         Click="btnMinimize_Click"
+                         Style="{StaticResource IconButtonStyle}"/>
+                    <Button x:Name="btnMaximize"
+                         Content="{StaticResource maximize}"
+                         Click="btnMaximize_Click"
+                         Style="{StaticResource IconButtonStyle}"/>
+                    <Button x:Name="btnClose"
+                         Content="{StaticResource close}"
+                         Click="btnClose_Click"
+                         Style="{StaticResource IconButtonStyle}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Content -->
+        <Border Grid.Row="1" Background="#ffffff" Margin="20,50,20,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Table Header -->
+                <Grid Grid.Row="0" Background="#f2f2f2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" FontSize="18" Background="#3AADA1" Foreground="#333333" Padding="16" Text="Currency"/>
+                    <TextBlock Grid.Column="1" FontSize="18" Background="#3AADA1" Foreground="#333333" Padding="16" Text="Amount"/>
+                    <TextBlock Grid.Column="2" FontSize="18" Background="#3AADA1" Foreground="#333333" Padding="16" Text="Estimated Value (USD)"/>
+                </Grid>
+                <!-- Data Rows -->
+                <Grid Grid.Row="1" Background="#f2f2f2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" FontSize="16" Foreground="#555555" Padding="16" Text="USD"/>
+                    <TextBlock x:Name="txtUsdAmount" Grid.Column="2" FontSize="16" Foreground="#555555" Padding="16" Text="{Binding AccountBalance.Usd}"/>
+                </Grid>
+                <Grid Grid.Row="2" Background="#f2f2f2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" FontSize="16" Background="#C0C0C0" Foreground="#555555" Padding="16" Text="BTC"/>
+                    <TextBlock x:Name="txtBtcAmount" Grid.Column="1" FontSize="16" Background="#C0C0C0" Foreground="#555555" Padding="16" Text="{Binding AccountBalance.Btc}"/>
+                    <TextBlock x:Name="txtBtcValue" Grid.Column="2" FontSize="16" Background="#C0C0C0" Foreground="#555555" Padding="16" />
+                </Grid>
+                <Grid Grid.Row="3" Background="#f2f2f2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" FontSize="16" Foreground="#555555" Padding="16" Text="ETH"/>
+                    <TextBlock x:Name="txtEthAmount" Grid.Column="1" FontSize="16" Foreground="#555555" Padding="16" Text="{Binding AccountBalance.Eth}"/>
+                    <TextBlock x:Name="txtEthValue" Grid.Column="2" FontSize="16" Foreground="#555555" Padding="16" />
+                </Grid>
+                <Grid Grid.Row="4" Background="#f2f2f2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" FontSize="16" Background="#C0C0C0" Foreground="#555555" Padding="16" Text="DOGE"/>
+                    <TextBlock x:Name="txtDogeAmount" Grid.Column="1" FontSize="16" Background="#C0C0C0" Foreground="#555555" Padding="16" Text="{Binding AccountBalance.Doge}"/>
+                    <TextBlock x:Name="txtDogeValue" Grid.Column="2" FontSize="16" Background="#C0C0C0" Foreground="#555555" Padding="16" />
+                </Grid>
+                <Grid Grid.Row="5" Background="#f2f2f2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" FontSize="16" Foreground="#555555" Padding="16" Text="XRP"/>
+                    <TextBlock x:Name="txtXrpAmount" Grid.Column="1" FontSize="16" Foreground="#555555" Padding="16" Text="{Binding AccountBalance.Xrp}"/>
+                    <TextBlock x:Name="txtXrpValue" Grid.Column="2" FontSize="16" Foreground="#555555" Padding="16" />
+                </Grid>
+                <Grid Grid.Row="6" Background="#f2f2f2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" FontSize="16" Background="#C0C0C0" Foreground="#555555" Padding="16" Text="BNB"/>
+                    <TextBlock x:Name="txtBnbAmount" Grid.Column="1" FontSize="16" Background="#C0C0C0" Foreground="#555555" Padding="16" Text="{Binding AccountBalance.Bnb}"/>
+                    <TextBlock x:Name="txtBnbValue" Grid.Column="2" FontSize="16" Background="#C0C0C0" Foreground="#555555" Padding="16" />
+                </Grid>
+
+                <!-- Total Value -->
+                <TextBlock x:Name="txtTotalValue" Grid.Row="7" FontSize="18" FontWeight="Bold" Foreground="#333333" Padding="16" Text="Total Value in USD: $"/>
+
+                <!-- Deposit and Withdraw Section -->
+                <Border Grid.Row="8">
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <!-- Buy and Sell Elements -->
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" >
+                            <Border  Width="200" Height="50" BorderBrush="#ACB0AF" BorderThickness="1" CornerRadius="5">
+                                <Grid>
+                                    <TextBlock x:Name="textDepositAmount" FontSize="16" Margin="10,13,10,7" MouseDown="TextDepositAmout_MouseDown" Text="Amount" Style="{StaticResource textHint}" />
+                                    <TextBlock x:Name="CryptoSymbolDepositPlaceholder" FontSize="16" Margin="160,13,0,7" Text="USD" RenderTransformOrigin="0.518,0.536" Style="{StaticResource textHint}" />
+                                    <TextBox Name="DepositAmountInput" FontSize="16" Margin="0,13,43,7" TextChanged="TxtDepositAmount_TextChanged" Style="{StaticResource textBox}" PreviewTextInput="NumericInputTextBox_PreviewTextInput" TextAlignment="Right"/>
+                                </Grid>
+                            </Border>
+                            <Button Content="Deposit USD" Height="50" Margin="5" Click="DepositUSD_Click" Style="{StaticResource buyButton}" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                            <Border Width="200" Height="50" BorderBrush="#ACB0AF" BorderThickness="1" CornerRadius="5">
+                                <Grid>
+                                    <TextBlock x:Name="textWithdrawAmount" FontSize="16" Margin="10,13,10,7" MouseDown="TextWithdrawAmout_MouseDown" Text="Amount" Style="{StaticResource textHint}" />
+                                    <TextBlock x:Name="CryptoSymbolWithdrawPlaceholder" FontSize="16" Margin="160,13,0,7" Text="USD" RenderTransformOrigin="0.518,0.536" Style="{StaticResource textHint}" />
+                                    <TextBox Name="withdrawAmountInput" FontSize="16" Margin="0,13,43,7" TextChanged="TxtWithdrawAmount_TextChanged" Style="{StaticResource textBox}" PreviewTextInput="NumericInputTextBox_PreviewTextInput" TextAlignment="Right"/>
+                                </Grid>
+                            </Border>
+                            <Button Content="Withdraw USD" Height="50" Margin="5" Click="WithdrawUSD_Click" Style="{StaticResource sellButton}" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

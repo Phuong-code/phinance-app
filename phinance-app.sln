@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "phinance2", "phinance2.csproj", "{1EFFE33F-5658-4F21-949B-C7034542815C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EFFE33F-5658-4F21-949B-C7034542815C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EFFE33F-5658-4F21-949B-C7034542815C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EFFE33F-5658-4F21-949B-C7034542815C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EFFE33F-5658-4F21-949B-C7034542815C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E80AAFAE-D0F0-4941-A983-AEACF01B98DB}
+	EndGlobalSection
+EndGlobal

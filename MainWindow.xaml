@@ -57,7 +57,7 @@
         </Border>
 
         <!-- Header Section -->
-        <Border Background="#FFFFFF" Grid.Row="1" CornerRadius="0 0 10 10">
+        <Border Background="#FFFFFF" Grid.Row="1" CornerRadius="0 0 10 10" MouseDown="Border_MouseDown">
             <StackPanel Margin="20,40,20,20" HorizontalAlignment="Center">
                 <TextBlock Text="Phinance" Foreground="#3AADA1" Style="{StaticResource TitleText}" />
                 <TextBlock Text="Cryptocurrency Exchanges" Foreground="#3AADA1" Style="{StaticResource TitleText}" />
